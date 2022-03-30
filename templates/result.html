@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <meta property="og:title" content="Land and Property Data proof of concept">
-    <meta property="og:locale" content="en_GB">
-  </head>
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-      
-      <h1>Yes</h1>
-    </div>
-  </body>
-</html>
+{% extends "_base.html" %}
+{% block content %}
+  {% if valid_uprn %}
+    {% if in_wales == 'yes' %}
+      <h1>🏴󠁧󠁢󠁷󠁬󠁳󠁿 Yes</h1>
+    {% elif in_wales == 'partial' %}
+      <h1>Partially</h1>
+    {% elif in_wales == 'not found' %}
+      <h1>Not found</h1>
+    {% else %}
+      <h1>No</h1>
+    {% endif %}
+  
+  {% else %}
+    <p>Invalid UPRN. Please try again</p>
+    {% include '_search.html' %}
+  {% endif %}
+{% endblock %}
