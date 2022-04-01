@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import requests
 import helpers
 
 app = Flask(__name__)
@@ -13,16 +14,24 @@ def result():
     uprn =  request.args.get("uprn")
     valid_uprn = helpers.validate_uprn(uprn)
 
-    in_wales = None
-    if uprn == '12345':
-        in_wales = 'yes'
-    elif uprn == '54321':
-        in_wales = 'partial'
-    elif uprn == '78910':
-        in_wales = 'not found'
-    elif uprn == '10987':
-        in_wales = 'no'
-    
+    if valid_uprn:
+        response = requests.post('https://land-property-platform.herokuapp.com/is_it_in_wales', data = {'uprn':'uprn'})
+        print(response.text)
+        # data = response.json()
+        
+        # in_wales = data.get('in_wales', None)
+
+
+    # in_wales = None
+    # if uprn == '12345':
+    #     in_wales = 'yes'
+    # elif uprn == '54321':
+    #     in_wales = 'partial'
+    # elif uprn == '78910':
+    #     in_wales = 'not found'
+    # elif uprn == '10987':
+    #     in_wales = 'no'
+
     if in_wales == None:
         raise Exception("Unhandled exception")
 

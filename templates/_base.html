@@ -8,9 +8,10 @@
     <meta property="og:title" content="Land and Property Data proof of concept">
     <meta property="og:locale" content="en_GB">
     <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}?v=1">
   </head>
   <body>
+    
     <div class="container-lg px-3 my-5 markdown-body">
       <h1><a href="/">Is it in Wales?</a></h1>
       {% block content %}{% endblock %}
