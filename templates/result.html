@@ -1,16 +1,18 @@
 {% extends "_base.html" %}
 {% block content %}
   {% if valid_uprn %}
-    {% if in_wales == 'yes' %}
-      <h1>🏴󠁧󠁢󠁷󠁬󠁳󠁿 Yes</h1>
-    {% elif in_wales == 'partial' %}
-      <h1>Partially</h1>
-    {% elif in_wales == 'not found' %}
-      <h1>Not found</h1>
+    {% if in_wales == 'true' %}
+      <p class="result">🏴󠁧󠁢󠁷󠁬󠁳󠁿 Yes</p>
+    {% elif in_wales == 'false' %}
+      <p class="result">🏴󠁧󠁢󠁥󠁮󠁧󠁿 No</p>
+    {% elif in_wales == 'partially' %}
+      <p class="result">Partially</p>
+    {% elif in_wales == 'not in database' %}
+      <p class="result">Not found</p>
+      <p>The Land and property data platform only contains a subset of UPRNs for Wales and England. <a href="https://land-property-platform.herokuapp.com/poc-data">See here for more information about what data is included</a></p>
     {% else %}
-      <h1>No</h1>
+      <p class="result">Sorry, something went wrong</p>
     {% endif %}
-  
   {% else %}
     <p>Invalid UPRN. Please try again</p>
     {% include '_search.html' %}

@@ -1,3 +1,26 @@
 html { 
   text-align:center;
+
+}
+
+.markdown-body h1 {
+  font-size:300%;
+}
+
+form {
+  font-size:200%;
+}
+
+p, ul {
+  font-size:120%;
+}
+
+p.result {
+  font-size:600%;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+abbr {
+  text-decoration:dotted;
 }

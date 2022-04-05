@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}?v=1">
   </head>
   <body>
-    
+
     <div class="container-lg px-3 my-5 markdown-body">
       <h1><a href="/">Is it in Wales?</a></h1>
       {% block content %}{% endblock %}
@@ -19,21 +19,24 @@
     <footer>
       <p>This is a demonstration service built to test the proof of concept <a href="https://land-property-platform.herokuapp.com">Land and property platform</a>.</p>
       <p>
-        it is not yet linked up to the API. Use the following values to see the different result:
-        <ul>
-          <li>
-            In Wales: <a href="/result?uprn=12345">12345</a>
-          </li>
-          <li>
-            Partially in Wales: <a href="/result?uprn=54321">54321</a>
-          </li>
-          <li>
-            Not found: <a href="/result?uprn=78910">78910</a>
-          </li>
-          <li>
-            Not in Wales: <a href="/result?uprn=10987">10987</a>
-          </li>
-        </ul>
+        it is not yet linked up to the API. Use the following UPRNs to see the different result:
+      </p>
+      <ul>
+        <li>
+          In Wales: <a href="/result?uprn=10024827644">10024827644</a>
+        </li>
+        <li>
+          Partially in Wales: <a href="/result?uprn=10093284081">10093284081</a>
+        </li>
+        <li>
+          Not found: <a href="/result?uprn=78910">78910</a>
+        </li>
+        <li>
+          Not in Wales: <a href="/result?uprn=10014514734">10014514734</a>
+        </li>
+      </ul>
+      <p>
+        Or use <a href="https://land-property-platform.herokuapp.com/poc-data">any of the UPRNs listed here</a>
       </p>
     </footer>
   </body>
