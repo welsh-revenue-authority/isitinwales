@@ -1,6 +1,6 @@
-A demonstration service built to test the proof of concept Land and Property Platform
+A [demonstration service](http://www.isitin.wales/) built to test the proof of concept Land and Property Platform.
 
-### Getting started
+## Getting started
 
 We recommend working in a virtual environment.
 
